@@ -1,4 +1,4 @@
-/* Базовые правила и каркас страницы уже подготовлены преподавателем. */
+/* Базовые правила */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -7,33 +7,23 @@ body {
   background: var(--color-page);
   font: var(--font-weight-normal) var(--font-size-base)/var(--line-height-body) var(--font-family-body);
 }
-h1, h2, h3, h4, h5, h6, code {
-  color: var(--color-text);
-}
-code {
-  background: transparent;
-  padding: 0;
-}
+h1, h2, h3, h4, h5, h6, code { color: var(--color-text); }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 3px; }
 
+/* Каркас */
 .app-shell { min-height: 100vh; }
 .topbar {
-  max-width: 1240px; margin: 0 auto;
-  padding: var(--space-5) var(--space-6);
+  max-width: 1240px; margin: 0 auto; padding: var(--space-5) var(--space-6);
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: var(--space-4);
-  border-bottom: 1px solid var(--color-border);
+  gap: var(--space-4); border-bottom: 1px solid var(--color-border);
 }
 .brand { display: inline-flex; gap: var(--space-3); align-items: center; text-decoration: none; }
 .brand__mark {
-  display: grid; place-items: center;
-  width: 46px; height: 46px;
-  font-weight: 800;
-  color: var(--color-on-primary);
-  background: var(--color-primary);
+  display: grid; place-items: center; width: 46px; height: 46px;
+  font-weight: 800; color: var(--color-on-primary); background: var(--color-primary);
   border-radius: var(--radius-md);
 }
 .brand strong { display: block; font-size: var(--font-size-lg); letter-spacing: -.04em; line-height: var(--line-height-tight); }
@@ -44,25 +34,17 @@ a { color: inherit; }
 
 .main { max-width: 1240px; padding: var(--space-12) var(--space-6); margin: 0 auto; }
 
+/* Секции */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
-  gap: var(--space-8);
-  align-items: end;
-  padding-bottom: var(--space-12);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: var(--space-8); align-items: end; padding-bottom: var(--space-12);
 }
 .eyebrow { margin: 0 0 var(--space-3); color: var(--color-link); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: .15em; }
 h1, h2, p { margin-top: 0; }
 h1 { margin-bottom: var(--space-4); font-size: var(--font-size-display); line-height: 1.08; font-weight: var(--font-weight-bold); letter-spacing: -.06em; }
 h1 span { color: var(--color-link); }
 .hero__lead { max-width: 680px; margin: 0; color: var(--color-text-muted); }
-.hero__aside {
-  padding: var(--space-5);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-surface);
-}
+.hero__aside { padding: var(--space-5); border: 1px solid var(--color-border); background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-surface); }
 .hero__aside strong, .hero__aside span { display: block; }
 .hero__aside strong { margin-bottom: var(--space-2); font-size: var(--font-size-lg); letter-spacing: -.03em; }
 .hero__aside span { color: var(--color-text-muted); font-size: var(--font-size-sm); }
@@ -86,13 +68,7 @@ h2 { font-size: var(--font-size-xl); line-height: var(--line-height-tight); lett
 .swatch code { color: var(--color-text-muted); font-size: var(--font-size-xs); overflow-wrap: anywhere; }
 
 .section-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
-.section--card {
-  padding: var(--space-5);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-surface);
-}
+.section--card { padding: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-surface); }
 
 .type-samples { display: grid; gap: var(--space-3); }
 .type-row { display: grid; grid-template-columns: 72px minmax(0,1fr); align-items: baseline; gap: var(--space-2); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-border); }
@@ -130,64 +106,36 @@ h2 { font-size: var(--font-size-xl); line-height: var(--line-height-tight); lett
   font-weight: var(--font-weight-medium);
   text-align: center;
 }
-.button--primary {
-  color: var(--button-text-primary);
-  background: var(--button-bg-primary);
-  border-color: var(--button-bg-primary);
-}
-.button--primary:hover:not(:disabled) {
-  background: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-}
-.button--primary:active:not(:disabled) {
-  background: var(--color-primary-active);
-  border-color: var(--color-primary-active);
-}
+.button--primary { color: var(--button-text-primary); background: var(--button-bg-primary); border-color: var(--button-bg-primary); }
+.button--primary:hover:not(:disabled) { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.button--primary:active:not(:disabled) { background: var(--color-primary-active); border-color: var(--color-primary-active); }
 
-.button--secondary {
-  color: var(--color-text);
-  background: var(--color-surface);
-  border-color: var(--color-border-control);
-}
+.button--secondary { color: var(--color-text); background: var(--color-surface); border-color: var(--color-border-control); }
 .button--secondary:hover:not(:disabled) { background: var(--color-surface-subtle); }
 .button--secondary:active:not(:disabled) { background: var(--color-border); }
 
-.button--ghost {
-  color: var(--color-primary);
-  background: transparent;
-  border-color: transparent;
-}
+.button--ghost { color: var(--color-primary); background: transparent; border-color: transparent; }
 .button--ghost:hover:not(:disabled) { background: var(--color-surface-subtle); }
 .button--ghost:active:not(:disabled) { background: var(--color-border); }
 
-.button:disabled { opacity: .55; cursor: not-allowed; }
+.button:disabled { opacity: 0.55; cursor: not-allowed; }
 
-/* ===== B. Поля и списки выбора ===== */
+/* ===== B. Поля и списки ===== */
 .input, .select {
-  min-height: var(--control-height);
   width: 100%;
+  min-height: var(--control-height);
   padding: 0 var(--control-padding-inline);
   color: var(--color-text);
   background: var(--color-surface);
   border: 1px solid var(--color-border-control);
   border-radius: var(--radius-sm);
 }
-.input::placeholder { color: var(--color-text-muted); opacity: .9; }
+.input::placeholder { color: var(--color-text-muted); opacity: 0.7; }
 .input:focus-visible, .select:focus-visible { border-color: var(--color-focus-ring); }
 .input[aria-invalid="true"] { border-color: var(--color-error); }
 .input[aria-invalid="true"]:focus-visible { outline-color: var(--color-error); }
-.input:disabled, .select:disabled {
-  opacity: .65;
-  cursor: not-allowed;
-  background: var(--color-surface-subtle);
-}
-
-/* Узкий селект в тулбаре, чтобы не растягивался на всю строку. */
-.select--toolbar {
-  width: auto;
-  min-width: 10rem;
-  background: var(--color-surface);
-}
+.input:disabled, .select:disabled { opacity: 0.65; cursor: not-allowed; background: var(--color-surface-subtle); }
+.select--toolbar { width: auto; min-width: 120px; background: var(--color-surface); }
 
 /* ===== C. Уведомления ===== */
 .alert {
@@ -198,8 +146,7 @@ h2 { font-size: var(--font-size-xl); line-height: var(--line-height-tight); lett
   border-radius: var(--radius-md);
 }
 .alert__symbol {
-  flex: none;
-  display: grid; place-items: center;
+  flex: none; display: grid; place-items: center;
   width: 1.5rem; height: 1.5rem;
   font-weight: var(--font-weight-bold);
   border-radius: 50%;
@@ -207,6 +154,7 @@ h2 { font-size: var(--font-size-xl); line-height: var(--line-height-tight); lett
 }
 .alert p { margin: var(--space-1) 0 0; font-size: var(--font-size-sm); }
 .alert strong { display: block; }
+
 .alert--info { color: var(--color-info); background: var(--color-info-bg); border-color: var(--color-info); }
 .alert--success { color: var(--color-success); background: var(--color-success-bg); border-color: var(--color-success); }
 .alert--error { color: var(--color-error); background: var(--color-error-bg); border-color: var(--color-error); }

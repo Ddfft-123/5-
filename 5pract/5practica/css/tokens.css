@@ -1,6 +1,6 @@
 /* ATLAS UI Kit — 3 уровня: primitive → semantic → component. */
 :root {
-  /* 1. Примитивы: значения без привязки к интерфейсной роли. */
+  /* 1. Примитивы */
   --base-blue-700: #1853a4;
   --base-blue-800: #113c79;
   --base-blue-900: #0e3264;
@@ -35,7 +35,7 @@
   --radius-lg: 1.125rem;
   --shadow-surface: 0 10px 35px rgba(11, 32, 57, 0.055);
 
-  /* 2. Семантические токены — светлая тема (по умолчанию). */
+  /* 2. Семантические токены — светлая тема */
   --color-page: #f6f8fc;
   --color-surface: var(--base-white);
   --color-surface-subtle: #eef3f9;
@@ -43,12 +43,14 @@
   --color-text-muted: var(--base-slate-600);
   --color-border: #d9e2eb;
   --color-border-control: #76859a;
+
   --color-primary: var(--base-blue-700);
   --color-link: var(--base-blue-700);
   --color-primary-hover: var(--base-blue-800);
   --color-primary-active: var(--base-blue-900);
   --color-on-primary: var(--base-white);
   --color-focus-ring: #174a94;
+
   --color-info: #155e8a;
   --color-info-bg: #eaf6ff;
   --color-success: #18724d;
@@ -59,7 +61,7 @@
   --color-warning-bg: #fff6e5;
   color-scheme: light;
 
-  /* 3. Токены компонентов. */
+  /* 3. Токены компонентов */
   --button-bg-primary: var(--color-primary);
   --button-text-primary: var(--color-on-primary);
   --button-height: 2.75rem;
@@ -70,66 +72,70 @@
   --alert-padding: var(--space-4);
 }
 
-/* Тёмная тема по системному предпочтению (действует, пока data-theme не задан). */
+/* Тёмная тема — системная */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --color-page: #101923;
     --color-surface: #192536;
-    --color-surface-subtle: #223145;
+    --color-surface-subtle: #212f44;
     --color-text: #eef4fa;
-    --color-text-muted: #a1b2c4;
-    --color-border: #2d3d54;
-    --color-border-control: #a1b2c4;
-    --color-primary: #4f8cff;
-    --color-link: #8ab4ff;
-    --color-primary-hover: #6ea1ff;
-    --color-primary-active: #3f78e0;
-    --color-on-primary: #0b1524;
-    --color-focus-ring: #8ab4ff;
-    --color-info: #8cccf2;
-    --color-info-bg: #12283a;
-    --color-success: #7fe0ae;
-    --color-success-bg: #12301f;
-    --color-error: #ff9aa8;
-    --color-error-bg: #3a1720;
-    --color-warning: #f3c46b;
-    --color-warning-bg: #3a2a0d;
+    --color-text-muted: #9cb0c5;
+    --color-border: #2c3e57;
+    --color-border-control: #506887;
+
+    --color-primary: #3b72d9;
+    --color-link: #5a8fff;
+    --color-primary-hover: #2d5fbf;
+    --color-primary-active: #1e4a9e;
+    --color-on-primary: #ffffff;
+    --color-focus-ring: #5a8fff;
+
+    --color-info: #5b9bd5;
+    --color-info-bg: #132a3d;
+    --color-success: #6ee7b7;
+    --color-success-bg: #183d29;
+    --color-error: #fca5a5;
+    --color-error-bg: #3b1c1c;
+    --color-warning: #fcd34d;
+    --color-warning-bg: #3b2c10;
     color-scheme: dark;
   }
 }
 
-/* Тёмная тема по ручному выбору — приоритет выше системной. */
+/* Тёмная тема — ручная */
 :root[data-theme="dark"] {
   --color-page: #101923;
   --color-surface: #192536;
-  --color-surface-subtle: #223145;
+  --color-surface-subtle: #212f44;
   --color-text: #eef4fa;
-  --color-text-muted: #a1b2c4;
-  --color-border: #2d3d54;
-  --color-border-control: #a1b2c4;
-  --color-primary: #4f8cff;
-  --color-link: #8ab4ff;
-  --color-primary-hover: #6ea1ff;
-  --color-primary-active: #3f78e0;
-  --color-on-primary: #0b1524;
-  --color-focus-ring: #8ab4ff;
-  --color-info: #8cccf2;
-  --color-info-bg: #12283a;
-  --color-success: #7fe0ae;
-  --color-success-bg: #12301f;
-  --color-error: #ff9aa8;
-  --color-error-bg: #3a1720;
-  --color-warning: #f3c46b;
-  --color-warning-bg: #3a2a0d;
+  --color-text-muted: #9cb0c5;
+  --color-border: #2c3e57;
+  --color-border-control: #506887;
+
+  --color-primary: #3b72d9;
+  --color-link: #5a8fff;
+  --color-primary-hover: #2d5fbf;
+  --color-primary-active: #1e4a9e;
+  --color-on-primary: #ffffff;
+  --color-focus-ring: #5a8fff;
+
+  --color-info: #5b9bd5;
+  --color-info-bg: #132a3d;
+  --color-success: #6ee7b7;
+  --color-success-bg: #183d29;
+  --color-error: #fca5a5;
+  --color-error-bg: #3b1c1c;
+  --color-warning: #fcd34d;
+  --color-warning-bg: #3b2c10;
   color-scheme: dark;
 }
 
-/* Ручная светлая тема: явно фиксируем color-scheme, значения уже в :root. */
+/* Светлая тема — ручная */
 :root[data-theme="light"] {
   color-scheme: light;
 }
 
-/* Компактный режим плотности (самостоятельная часть). */
+/* Компактный режим */
 :root[data-density="compact"] {
   --button-height: 2.25rem;
   --control-height: 2.25rem;
